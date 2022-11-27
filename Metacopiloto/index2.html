@@ -1,83 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-  
-<head>
-    <title>
-        
-    </title>
+  <head>
+    <title>Add Map</title>
     <link rel="stylesheet" href="css/style.css">
     <link href=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            rel="stylesheet">
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        rel="stylesheet">
   
     <script src=
-"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" 
+        "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" 
     type="text/javascript">
   
     </script>
   
     <script src=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
     </script>
-</head>
-  
-<body>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <h5 class="card-header h5 text-center">
-                        HTML 5 & JS live Cam
+                        Mapa da Rota
                     </h5>
-                    <div class="card-body">
-                        <div class="booth">
-                            <video id="video" width="100%" 
-                                height="100%" autoplay>
-                            </video>
-                        </div>
-  
-                        <div class="text-right">
-                            <a href="#!" class="btn btn-danger" 
-                                onClick="stop()">
-                                Stop Cam
-                            </a>
-                            <a href="#!" class="btn btn-success"
-                                onClick="start()">
-                                Start Cam
-                            </a>
-                        </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d233631.52124221335!2d-46.59300527343053!3d-23.801079144344907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x94ce43aa3476c3c7%3A0x23b10ba130caa9d3!2sAnchieta%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP!3m2!1d-23.6766439!2d-46.5624939!4m5!1s0x94ce03423c3b1c3b%3A0x584dceedfc63644f!2sSantos%2C%20SP!3m2!1d-23.959203799999997!2d-46.331780599999995!5e0!3m2!1spt-BR!2sbr!4v1669557744906!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  </body>
+                    <div class="text-right">
+                        <a href="#!" class="btn btn-success"
+                                onClick="pageMoto()">
+                                Motorista
+                        </a>
+                        <a href="#!" class="btn btn-success"
+                                onClick="pageQualif()">
+                                Prova de qualificação
+                        </a>
+                        <a href="#!" class="btn btn-success"
+                                onClick="pageInicial()">
+                                Pagina Inicial
+                        </a>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-  
     <script>
-        var stop = function () {
-            var stream = video.srcObject;
-            var tracks = stream.getTracks();
-            for (var i = 0; i < tracks.length; i++) {
-                var track = tracks[i];
-                track.stop();
-            }
-            video.srcObject = null;
+        function pageMoto()
+        {
+            window.location.href = 'C:/Metacopiloto/index3.html'
         }
-        var start = function () {
-            var video = document.getElementById('video'),
-                vendorUrl = window.URL || window.webkitURL;
-            if (navigator.mediaDevices.getUserMedia) {
-                navigator.mediaDevices.getUserMedia({ video: true })
-                    .then(function (stream) {
-                        video.srcObject = stream;
-                    }).catch(function (error) {
-                        console.log("Something went wrong!");
-                    });
-            }
+
+        function pageInicial()
+        {
+            window.location.href = 'C:/Metacopiloto/index.html'   
         }
-        $(function () {
-            start();
-        });  
+        function pageQualif()
+        {
+            window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScgeAID10TbAo0QaWHQch11wQm_GBJLeURtLHM4pjezdbnYRg/viewform?usp=sf_link'
+        }  
     </script>
-</body>
-  
 </html>
